@@ -102,9 +102,9 @@
         /* Sequential Text Animations */
         .bsg-acronym {
             font-family: 'Cinzel', serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            letter-spacing: 8px;
+            letter-spacing: 3px;
             background: linear-gradient(to right, #fff3b0, #ffd700, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -267,7 +267,7 @@
         /* ================= DASHBOARD / PORTAL SECTION ================= */
         #portal-section {
             display: none;
-            min-height: 100vh;
+            min-height: 85vh;
             padding: 30px 20px 60px;
             position: relative;
             z-index: 1;
@@ -308,6 +308,7 @@
             background: #fff;
             padding: 4px;
             border: 2px solid var(--gold-bright);
+            object-fit: contain;
         }
 
         .portal-brand h2 {
@@ -340,20 +341,22 @@
             color: var(--navy-dark);
         }
 
-        /* Button Grid System */
+        /* Centered Button Grid System */
         .portal-grid {
             max-width: 1150px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
         }
 
         .branch-card {
+            width: 310px;
             background: linear-gradient(145deg, rgba(22, 51, 117, 0.9), rgba(8, 21, 52, 0.95));
             border: 1.5px solid rgba(255, 215, 0, 0.35);
             border-radius: 16px;
-            padding: 24px 20px;
+            padding: 28px 22px;
             text-decoration: none;
             color: #ffffff;
             display: flex;
@@ -389,15 +392,15 @@
         }
 
         .card-icon {
-            width: 62px;
-            height: 62px;
+            width: 66px;
+            height: 66px;
             border-radius: 16px;
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-warm));
             color: var(--navy-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             margin-bottom: 16px;
             box-shadow: 0 6px 15px rgba(255, 215, 0, 0.35);
             transition: transform 0.3s ease;
@@ -408,50 +411,64 @@
         }
 
         .branch-card h3 {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--gold-light);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .branch-card p {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: #cbd5e1;
-            margin-bottom: 16px;
-            line-height: 1.4;
+            margin-bottom: 18px;
+            line-height: 1.45;
         }
 
         .card-action {
             margin-top: auto;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--gold-bright);
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 14px;
+            padding: 7px 16px;
             border-radius: 20px;
             background: rgba(255, 215, 0, 0.12);
         }
 
-        /* Footer */
+        /* Footer & Browser Notice */
         footer {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             color: #94a3b8;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             position: relative;
             z-index: 1;
         }
 
+        .browser-notice {
+            margin-top: 14px;
+            padding: 12px 18px;
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            border-radius: 12px;
+            color: var(--gold-light);
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 640px) {
-            .bsg-acronym { font-size: 2.2rem; letter-spacing: 5px; }
+            .bsg-acronym { font-size: 1.8rem; letter-spacing: 2px; }
             .org-name { font-size: 1.15rem; }
             .system-title { font-size: 1.55rem; padding: 10px 12px; }
             .slideshow-container { height: 200px; }
             .portal-header { justify-content: center; text-align: center; }
             .portal-brand { flex-direction: column; }
+            .branch-card { width: 100%; }
         }
     </style>
 </head>
@@ -462,14 +479,14 @@
          ========================================================= -->
     <section id="landing-section">
         <div class="hero-content">
-            <!-- BSG India Logo (আপনি চাইলে নিচের src-এ আপনার নিজের লোগো লিংক দিতে পারেন) -->
+            <!-- BSG India Logo -->
             <div class="logo-wrapper">
                 <img id="bsg-logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysdbfjrVhG1fQeT0jV4r0XTIi8I9mRUIEmPQ-MZQs0g&s" alt="BSG India Logo">
             </div>
 
             <!-- Animated Texts -->
             <div class="bsg-acronym">Bharat Scouts and Guides</div>
-            <h1 class="org-name"> West Bengal State Association</h1>
+            <h1 class="org-name">West Bengal State Association</h1>
             <div class="org-address">
                 <i class="fa-solid fa-location-dot" style="color: #ffd700; margin-right: 6px;"></i>
                 5, Government Place North, Kolkata - 700001
@@ -484,7 +501,6 @@
 
             <!-- Photo Slideshow Box -->
             <div class="slideshow-container" id="slideshow-box">
-                <!-- Slides will be injected automatically from the JavaScript list below -->
                 <div class="slide-dots" id="slide-dots"></div>
             </div>
         </div>
@@ -496,7 +512,7 @@
     <section id="portal-section">
         <div class="portal-header">
             <div class="portal-brand">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bharat_Scouts_and_Guides.svg/512px-Bharat_Scouts_and_Guides.svg.png" alt="BSG Logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRysdbfjrVhG1fQeT0jV4r0XTIi8I9mRUIEmPQ-MZQs0g&s" alt="BSG Logo">
                 <div>
                     <h2>BSGWB Online Management System</h2>
                     <p>Bharat Scouts and Guides West Bengal • State Headquarters</p>
@@ -508,23 +524,22 @@
         </div>
 
         <!-- All Portal Buttons Grid -->
-        <div class="portal-grid" id="portal-grid">
-            <!-- Buttons will be generated automatically from the JavaScript list below -->
-        </div>
+        <div class="portal-grid" id="portal-grid"></div>
     </section>
 
     <footer>
-        &copy; 2026 Bharat Scouts and Guides, West Bengal. All Rights Reserved.
-		Browser Compatibility Notice: Since this system is built on Google’s platform, having multiple Gmail/Google accounts linked to your Google Chrome browser can cause loading or access errors. To avoid this issue, please open the portal using Mozilla Firefox, Microsoft Edge, Opera, or any other browser instead of Google Chrome.
+        <div>&copy; 2026 Bharat Scouts and Guides, West Bengal. All Rights Reserved.</div>
+        <div class="browser-notice">
+            <i class="fa-solid fa-circle-info" style="color: #ffd700; margin-right: 5px;"></i>
+            <strong>Browser Compatibility Notice:</strong> Since this system is built on Google’s platform, having multiple Gmail/Google accounts linked to your Google Chrome browser can cause loading or access errors. To avoid this issue, please open the portal using <strong>Mozilla Firefox, Microsoft Edge, Opera</strong>, or an Incognito/Guest window.
+        </div>
     </footer>
 
     <!-- =========================================================
-         EASY CUSTOMIZATION SCRIPT (এখানে আপনার লিংক ও ছবি দিন)
+         EASY CUSTOMIZATION SCRIPT
          ========================================================= -->
     <script>
-        /* -------------------------------------------------------------------
-           ১. স্লাইডশো-এর ছবির লিংক এখানে দিন (যতগুলো খুশি কপি-পেস্ট করে বাড়াতে পারেন)
-           ------------------------------------------------------------------- */
+        /* 1. স্লাইডশো-এর ছবির লিংক */
         const slideshowImages = [
             {
                 url: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1000&q=80",
@@ -540,30 +555,23 @@
             }
         ];
 
-        /* -------------------------------------------------------------------
-           ২. Get Started ক্লিক করার পর যে বাটনগুলো দেখাবে, তার লিস্ট নিচে দেওয়া আছে।
-              নতুন বাটন যোগ করতে হলে নিচের যেকোনো একটি { ... }, অংশ কপি করে নিচে পেস্ট করুন 
-              এবং title, desc, icon ও link পরিবর্তন করে দিন।
-           ------------------------------------------------------------------- */
+        /* 2. পোর্টাল বাটনসমূহ (নতুন বাটন যোগ করতে হলে একটি { ... }, ব্লক কপি করে নিচে পেস্ট করুন) */
         const portalButtons = [
             {
                 title: "Warrant Management",
                 desc: "Scouter & Guider Warrant Status, Application & Verification",
                 icon: "fa-solid fa-id-card-clip",
-                link: "https://script.google.com/macros/s/AKfycbzs3n60PQzh1XrYOLZquZqOjj1KYtqj_LOT31CSCD5Y_pOOQf2nLSXSMiT71TJBVlw5/exec" // এখানে আপনার আসল লিংক দিন
+                link: "https://script.google.com/macros/s/AKfycbzs3n60PQzh1XrYOLZquZqOjj1KYtqj_LOT31CSCD5Y_pOOQf2nLSXSMiT71TJBVlw5/exec"
             },
             {
                 title: "Group Registration & IRF",
                 desc: "Group Renewal, Group Registration & IRF",
                 icon: "fa-solid fa-users-rectangle",
-                link: "https://script.google.com/macros/s/AKfycbyB-O4aWhDB-2RIwKHTXdrkdraMV5ShQn2zEOmXIGUa0ExQEUhZ7yvUQ9-KR3cXDFws/exec" // এখানে আপনার আসল লিংক দিন
-            },
-            
+                link: "https://script.google.com/macros/s/AKfycbyB-O4aWhDB-2RIwKHTXdrkdraMV5ShQn2zEOmXIGUa0ExQEUhZ7yvUQ9-KR3cXDFws/exec"
+            }
         ];
 
-        /* ================= SYSTEM LOGIC (নিচের অংশ পরিবর্তনের প্রয়োজন নেই) ================= */
-        
-        // Render Slideshow
+        /* ================= SYSTEM LOGIC ================= */
         const slideshowBox = document.getElementById('slideshow-box');
         const dotsContainer = document.getElementById('slide-dots');
         let currentSlide = 0;
@@ -598,13 +606,12 @@
             showSlide(currentSlide + 1);
         }, 4000);
 
-        // Render Portal Buttons
         const portalGrid = document.getElementById('portal-grid');
         portalButtons.forEach(btn => {
             const card = document.createElement('a');
             card.className = 'branch-card';
             card.href = btn.link;
-            card.target = "_blank"; // নতুন ট্যাবে লিংক খোলার জন্য
+            card.target = "_blank";
             card.rel = "noopener noreferrer";
             card.innerHTML = `
                 <div class="card-icon"><i class="${btn.icon}"></i></div>
@@ -615,7 +622,6 @@
             portalGrid.appendChild(card);
         });
 
-        // Navigation Functions
         function openPortal() {
             const landing = document.getElementById('landing-section');
             const portal = document.getElementById('portal-section');
